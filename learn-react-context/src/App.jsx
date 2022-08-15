@@ -4,9 +4,10 @@ import './App.css'
 import axios from 'axios'
 import { Routes , Route} from 'react-router-dom'
 
-import NavBar from './components/NavBar'
+import Nav from './components/Nav'
 import Home from './components/Home'
 import About from './components/About'
+import Footer from './components/Footer'
 
 export const DataContext = createContext(); //เป็นตัวที่เอาไว้เก็บ stage ทั้งหมดในแอพ
 
@@ -19,14 +20,15 @@ function App() {
         .then(res => setData(res.data))
     },[])
 
- 
+ console.log(data)
   return (
     <DataContext.Provider value={data}>
-     <NavBar/>
+     <Nav/>
      <Routes>
         <Route path="/" element={<Home />} / >
           <Route path="/about" element={<About />} />
      </Routes>
+     <Footer/>
     </DataContext.Provider>
   )
 }

@@ -1,13 +1,13 @@
 import React , { useContext} from 'react'
 import { DataContext } from '../App'
+import { Container } from '../styles/styles'
 
 function Home() {
 
     const data = useContext(DataContext); //ไว้รับ data ที่ส่งมาจาก app
 
   return (
-    <div>
-        
+    <Container>
         <h1> Home </h1>
         <div>
             <img src={data.basics?.picture} alt={data.basics?.name} ></img>   {/*?ไว้เช็คว่ามีไหม ถ้าไม่มีก็ undefine */}
@@ -22,7 +22,7 @@ function Home() {
         </div>
 
     
-    </div>
+    </Container>
   )
 }
 
